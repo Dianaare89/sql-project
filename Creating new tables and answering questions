@@ -1,0 +1,43 @@
+create table EmployeePerformance ( EmployeeID Int Primary Key, Name VARCHAR(50),
+ Department VARCHAR(50), 
+ JobRole VARCHAR(50), 
+ HireDate DATE, 
+ TrainingHours INT, 
+ CertificationsCompleted INT,
+CertExpiryDate DATE,
+MonthlyPerformanceScore INT,
+Salary Decimal (10,2)
+);
+
+INSERT INTO EmployeePerformance (EmployeeID, Name, Department, JobRole, HireDate, TrainingHours, CertificationsCompleted, CertExpiryDate, MonthlyPerformanceScore, Salary)
+VALUES
+(1001, 'Alice', 'Sales', 'Sales Executive', '2020-01-15', 40, 3, '2024-01-14', 85, 60000),
+(1002, 'Bob', 'IT', 'Systems Analyst', '2019-03-12', 20, 2, '2025-03-11', 90, 80000),
+(1003, 'Charlie', 'HR', 'HR Manager', '2018-07-19', 30, 5, '2023-07-18', 75, 75000),
+(1004, 'Danielle', 'IT', 'Developer', '2021-05-24', 45, 4, '2025-05-23', 88, 85000),
+(1005, 'Ethan', 'Sales', 'Sales Associate', '2020-10-01', 50, 6, '2024-09-30', 92, 55000),
+(1006, 'Fiona', 'Finance', 'Accountant', '2017-09-01', 35, 3, '2024-08-31', 80, 70000),
+(1007, 'Greg', 'Marketing', 'Marqueting Manager', '2019-11-10', 25, 4, '2023-11-09', 82, 90000),
+(1008, 'Hannah', 'Finance', 'Financial Analyst', '2021-02-18', 40, 2, '2025-02-17', 89, 75000),
+(1009, 'Ian', 'IT', 'Data Analyst', '2022-06-30', 55, 1, '2026-06-29', 95, 85000),
+(1010, 'Jane', 'sales', 'Sales Manager', '2020-09-01', 50, 4, '2024-08-31', 88, 95000);
+
+;
+
+/*Average Monthly Performance Score by Department */
+
+SELECT Department, AVG (MonthlyPerformanceScore) as AvgPerformanceScore
+FROM employeeperformance
+GROUP BY Department;
+
+/*Total Training Hours by Department*/
+
+SELECT Department, SUM(TrainingHours) AS TotalTrainingHours
+FROM employeeperformance
+GROUP BY Department;
+
+/*Identify Employees Due for Certification Renewal*/
+
+SELECT EmployeeID, Name, Department, CertExpiryDate
+From employeeperformance
+WHERE CertExpiryDate < '2025-01-01';
