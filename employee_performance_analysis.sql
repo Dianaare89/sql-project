@@ -1,3 +1,20 @@
+/*
+Employee Performance Analysis
+
+Purpose:
+Create a sample employee performance dataset and use SQL
+to analyze performance, training, and certification information.
+
+Skills demonstrated:
+- CREATE TABLE
+- Primary keys
+- Data types
+- INSERT INTO
+- AVG and SUM
+- GROUP BY
+- WHERE filtering
+*/
+
 create table EmployeePerformance ( EmployeeID Int Primary Key, Name VARCHAR(50),
  Department VARCHAR(50), 
  JobRole VARCHAR(50), 
@@ -17,10 +34,10 @@ VALUES
 (1004, 'Danielle', 'IT', 'Developer', '2021-05-24', 45, 4, '2025-05-23', 88, 85000),
 (1005, 'Ethan', 'Sales', 'Sales Associate', '2020-10-01', 50, 6, '2024-09-30', 92, 55000),
 (1006, 'Fiona', 'Finance', 'Accountant', '2017-09-01', 35, 3, '2024-08-31', 80, 70000),
-(1007, 'Greg', 'Marketing', 'Marqueting Manager', '2019-11-10', 25, 4, '2023-11-09', 82, 90000),
+(1007, 'Greg', 'Marketing', 'Marketing Manager', '2019-11-10', 25, 4, '2023-11-09', 82, 90000),
 (1008, 'Hannah', 'Finance', 'Financial Analyst', '2021-02-18', 40, 2, '2025-02-17', 89, 75000),
 (1009, 'Ian', 'IT', 'Data Analyst', '2022-06-30', 55, 1, '2026-06-29', 95, 85000),
-(1010, 'Jane', 'sales', 'Sales Manager', '2020-09-01', 50, 4, '2024-08-31', 88, 95000);
+(1010, 'Jane', 'Sales', 'Sales Manager', '2020-09-01', 50, 4, '2024-08-31', 88, 95000);
 
 ;
 
