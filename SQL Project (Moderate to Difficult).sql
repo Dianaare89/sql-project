@@ -133,17 +133,17 @@ Question: What city is that and how much is the amount?
 Answer: Cape Coral with a total amount of 221.55*/
 
 SELECT 
-city,
-SUM(amount)
+    city,
+    SUM(amount) AS total_sales
 FROM payment p
 LEFT JOIN customer c
-ON p.customer_id=c.customer_id
+    ON p.customer_id = c.customer_id
 LEFT JOIN address a
-ON a.address_id=c.address_id
+    ON a.address_id = c.address_id
 LEFT JOIN city ci
-ON ci.city_id=a.city_id
+    ON ci.city_id = a.city_id
 GROUP BY city
-ORDER BY city DESC
+ORDER BY total_sales DESC;
 
 
 
